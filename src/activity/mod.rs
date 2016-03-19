@@ -1,6 +1,10 @@
 use error::*;
 use response::Response;
 
+use response_models::actor::Actor;
+use response_models::repository::Repository;
+use response_models::organization::Organisation;
+
 use rustc_serialize::Decoder;
 use rustc_serialize::Decodable;
 
@@ -11,45 +15,6 @@ use std::fmt;
 
 /// All Activity::Events have the same response format.
 /// The following structs represent this info found as a json response.
-
-/// `Repository` contains all info regarding a git repository.
-#[derive(Debug, RustcDecodable)]
-pub struct Repository {
-    pub id: u64,
-    pub name: String,
-    pub url: String,
-}
-
-/// `Actor` contains all info on the user generating the event.
-#[derive(Debug, RustcDecodable)]
-pub struct Actor {
-    pub id: u64,
-    pub login: String,
-    pub gravatar_id: String,
-    pub avatar_url: String,
-    pub url: String,
-    pub html_url: Option<String>,
-    pub followers_url: Option<String>,
-    pub following_url: Option<String>,
-    pub gists_url: Option<String>,
-    pub starred_url: Option<String>,
-    pub subscriptions_url: Option<String>,
-    pub organizations_url: Option<String>,
-    pub repos_url: Option<String>,
-    pub events_url: Option<String>,
-    pub received_events_url: Option<String>,
-    pub site_admin: Option<bool>,
-}
-
-/// `Organisation` contains all info on the organisation related to the event.
-#[derive(Debug, RustcDecodable)]
-pub struct Organisation {
-    pub id: u64,
-    pub login: String,
-    pub gravatar_id: String,
-    pub avatar_url: String,
-    pub url: String,
-}
 
 /// `EventResponse` represents the response for almost
 /// all event requests found in `activity::events` with issues as an exception.

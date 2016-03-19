@@ -6,7 +6,9 @@ pub mod response;
 pub mod client;
 pub mod error;
 pub mod http;
+pub mod pull_requests;
 
 pub use client::*;
 
 pub mod activity;
+pub mod response_models;
