@@ -3,7 +3,7 @@ use response::Response;
 
 use response_models::actor::Actor;
 use response_models::repository::Repository;
-use response_models::organization::Organisation;
+use response_models::organisation::Organisation;
 
 use rustc_serialize::Decoder;
 use rustc_serialize::Decodable;
